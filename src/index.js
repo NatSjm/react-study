@@ -7,7 +7,7 @@ while (i > 0) {
 	i--;
 }
 
-for (i = 10; i > 0; i++) {
+for (i = 10; i > 0; i--) {
 	console.log('FOR TRUE', i);
 }
 
