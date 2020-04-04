@@ -6,11 +6,11 @@ let currentYear = 1900 + date.getYear();
 
 let check = () => {
     userMounth = prompt('Введите месяц рождения');
-    if (userMounth > 12 || userMounth < 1) {
-        alert('Введите число меньше 13 и больше 0');
+    if (userMounth > 12 || userMounth < 1 || isNaN(userMounth)) {
+        alert('Введите число меньше 13 и больше 0!');
     } else {
         userYear = prompt('Введите год рождения');
-        if (userYear > currentYear) {
+        if (userYear > currentYear || userYear < 1 || isNaN(userYear)) {
             alert('Введена неправильная дата!');
         } else {
             userAge();
