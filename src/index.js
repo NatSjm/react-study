@@ -1,26 +1,23 @@
 
-const date = new Date();
-const currentMinutes = date.getMinutes();
+let i;
 
-const inputData = prompt('Введите дату:');
+i = 20;
+while (i > 0) {
+	console.log('WHILE TRUE', i);
+	i--;
+}
 
-console.log(inputData);
+for (i = 10; i > 0; i++) {
+	console.log('FOR TRUE', i);
+}
 
-switch (currentMinutes) {
-	case 44:
-	case 47:
-		console.log('Это 44!');
-		break;
+let value;
+const obj = [
+	1,
+	2,
+	'stroka',
+];
 
-	case 45:
-		console.log('Это 45!');
-		break;
-
-	case 50:
-		console.log('Это 50!');
-		break;
-
-	default:
-		console.log('Все остальное');
-		break;
+for (value of obj) {
+	console.log('keeeeeeeeeeey', value);
 }
