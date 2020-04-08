@@ -74,8 +74,14 @@ if (currentHours < 10) {
 if (currentMounth < 10) {
     currentMounth = '0' + currentMounth;
 }
+if (currentSeconds < 10) {
+    currentSeconds = '0' + currentSeconds;
+}
+if (currentMinutes < 10) {
+    currentMinutes = '0' + currentMinutes;
+}
 
-
+// let trueSeconds = (currentSeconds >= 30 && currentSeconds <= 59);
 
 const userInput = prompt('Введите данные');
 //Пункт 4
@@ -101,6 +107,11 @@ else if ((currentHours + ':' + currentMinutes + ':' + currentSeconds) === userIn
 //Пункт 6
 else if ((currentData + '.' + currentMounth) === userInput || ('0' + currentData + '.' + currentMounth) === userInput) {
     alert('Yes, now is ' + userInput);
+} else if ('15.12 14|00|30' === userInput && currentSeconds >= 30 && currentSeconds <= 59) {
+    alert('Yes ' + userInput + ' is correct');
+
 } else {
     alert('Нечего не совпало!!!');
 }
+console.log(currentData + '.' + currentMounth + ' ' + currentHours + '|' + currentMinutes + '|' + currentSeconds);
+console.log(userInput);
