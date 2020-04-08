@@ -1,8 +1,8 @@
 //решение задачи от 8.04 - ниже, вывод решения - в консоли
 
 //Для тестирования, тк пользовательские данные сверяются с текущим временем
-const date = new Date(2020, 3, 5, 9, 15, 42);
-//const date = new Date();
+//const date = new Date(2020, 3, 5, 9, 15, 42);
+const date = new Date();
 const userEnter = prompt("Введите минуты, или время, или дату, или время и дату в формате '15.12 14|00|30'");
 
 const currentMinutes = date.getMinutes();
