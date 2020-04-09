@@ -1,36 +1,26 @@
 
-const arr = [
-	110,
-	3,
-	1,
-	'qwjfie',
-	2,
-	18,
-	24,
-	4,
-	13,
-];
-const notSorts = [];
-
-const func = (prevValue, nextValue) => {
-	if (prevValue === nextValue) {
-		return 0;
-	}
-	if (prevValue < nextValue) {
-		return -1;
-	}
-	if (prevValue > nextValue) {
-		return 1;
-	}
+const mySort = (arr = [], func) => {
+  return () => {
+    return arr.sort((value, next) => {
+      return typeof func === 'function'
+        ? func(value, next)
+        : value > next
+          ? 1
+          : value < next
+            ? -1
+            : 0;
+    });
+  };
 };
+const arr = [ 1, 6, 15, 32 ];
 
-const sortNumbers = arr
-	.filter((value) => {
-		if (typeof value === 'number') {
-			return true;
-		}
-		return false;
-	})
-	.sort(func);
+const sortFunc1 = mySort([ ...arr ]);
+const sortFunc2 = mySort([ ...arr ], (value, next) => {
+  return value > next
+    ? -1
+    : value < next
+      ? 1
+      : 0;
+});
 
-console.log('lqwjfijwq', sortNumbers.concat(notSorts));
+console.log('sortFunc', sortFunc1(), sortFunc2());
