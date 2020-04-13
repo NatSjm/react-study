@@ -2,7 +2,7 @@
   "name": "project91",
   "version": "1.0.0",
   "description": "Test project",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -13,6 +13,8 @@
   "author": "91",
   "license": "ISC",
   "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1"
   },
   "browserslist": {
