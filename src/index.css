@@ -1,0 +1,99 @@
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap');
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        font-size: 10px;
+        font-family: 'Manrope', sans-serif;
+    }
+    
+    .account__wrap {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px 20%;
+        margin: 0 auto;
+        background-color: rgba(121, 121, 132, .4);
+    }
+    
+    .avatar__wrap {
+        min-width: 200px;
+        min-height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 5px solid rgb(94, 94, 243);
+        object-fit: cover;
+        position: relative;
+        margin: 0 30px 10px 0;
+        background: #fff;
+    }
+    
+    .avatar__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+    }
+    
+    .form__wrap {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+    }
+    
+    .form__input {
+        width: 80%;
+        min-width: 220px;
+        border-radius: 15px;
+        border: 3px solid rgb(94, 94, 243);
+        padding: 8px 5px 8px 15px;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        outline: transparent;
+        transition: all .1s linear;
+    }
+    
+    .form__input:hover,
+    .form__input:focus {
+        -webkit-box-shadow: -1px -1px 22px 0px rgba(104, 104, 104, 0.75);
+        -moz-box-shadow: -1px -1px 22px 0px rgba(104, 104, 104, 0.75);
+        box-shadow: -1px -1px 22px 0px rgba(104, 104, 104, 0.75);
+        border-color: #eee;
+    }
+    
+    .form__input:first-of-type {
+        margin-top: 20px;
+    }
+    
+    .form__btnSave {
+        width: 180px;
+        cursor: pointer;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 10px 0;
+        border-radius: 15px;
+        border: 3px solid transparent;
+        background: rgb(94, 94, 243);
+        color: #fff;
+        outline: transparent;
+        transition: all .1s linear;
+        line-height: 1;
+    }
+    
+    .form__btnSave:hover,
+    .form__btnSave:focus {
+        -webkit-box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.75);
+        color: #eee;
+    }
+    
+    .form__btnSave:active {
+        transform: translate(2px, 3px);
+    }
