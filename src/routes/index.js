@@ -1,7 +1,6 @@
-import Account from './Account.jsx';
-import Main from './Main.jsx';
+import Avatar from "./Avatar.jsx";
+import Name from "./Name.jsx";
+import Email from "./Name.jsx";
+import SaveBtn from "./Name.jsx";
 
-export {
-	Account,
-	Main,
-};
+export { Avatar, Name, Email, SaveBtn };
