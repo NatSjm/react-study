@@ -10,7 +10,6 @@ class App extends React.Component {
 	render = () => {
 		return names.map((moduleName, i) => {
 			const Component = routes[moduleName];
-
 			return <Component key={i} />;
 		});
 	};
