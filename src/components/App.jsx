@@ -1,25 +1,20 @@
-import React from "react";
-// import * as routes from "../routes/index.js";
-import Avatar from "../routes/Avatar";
-import Name from "../routes/Name";
-import Email from "../routes/Email";
-import SaveBtn from "../routes/SaveBtn";
-import style from "../index.css";
+import React from 'react';
+import * as routes from 'routes/index.js';
 
-// const names = ["Avatar", "Name", "Email", "SaveBtn"];
+const names = [
+	'Main',
+	'Account',
+];
 
 
 class App extends React.Component {
-  render = () => {
-    return (
-      <div>
-        <Avatar style={style} />
-        <Name style={style} />
-        <Email style={style} />
-        <SaveBtn style={style} />
-      </div>
-    );
-  };
-}
+	render = () => {
+		return names.map((moduleName, i) => {
+			const Component = routes[moduleName];
+
+			return <Component key={i} />;
+		});
+	};
+};
 
 export default App;
