@@ -6,6 +6,7 @@ const names = [
 	'Account',
 ];
 
+
 class App extends React.Component {
 	render = () => {
 		return names.map((moduleName, i) => {
