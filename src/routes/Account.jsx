@@ -1,14 +1,18 @@
 import React from 'react';
-import AccountForm from 'components/accountForm/AccountForm.jsx';
-
+import { Primary as BlockPrimary } from 'components/Block';
+import { Avatar as InputAvatar } from 'components/Input';
+import { User as FormUser } from 'components/Form';
 
 class Account extends React.Component {
-    render = () => {
-        return <main className="account_main container">
-            <h2 className="account_title">Аккаунт</h2>
-            <AccountForm />
-        </main>;
-    };
+	render = () => {
+		return <>
+			<BlockPrimary>
+				<InputAvatar />
+				<FormUser />
+			</BlockPrimary>
+		</>;
+		
+	};
 };
 
 export default Account;

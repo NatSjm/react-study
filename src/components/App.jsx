@@ -2,9 +2,9 @@ import React from 'react';
 import * as routes from 'routes/index.js';
 
 const names = [
-	'Main',
 	'Account',
 ];
+
 
 class App extends React.Component {
 	render = () => {
