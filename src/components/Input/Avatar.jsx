@@ -31,30 +31,33 @@ const Wrapper = styled(Block)`
 		height: 100%;
 		background-image: url(${(props) => props.src});
 		background-position: center;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 `;
 
 class Avatar extends React.Component {
-	state = {
-		src: logo
-	};
+    constructor(props) {
+        super(props);
+        this.state = {
+            src: logo
+        };
+    }
 
-	onChange = (e) => {
-		const reader = new FileReader();
+    onChange = (e) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(e.currentTarget.files[0]);
+        reader.onload = () => {
+            let newFile = reader.result;
+            this.setState({src: newFile});
+        };
+    };
 
-		reader.readAsDataURL(e.currentTarget.files[0]);
-		reader.onload = () => {
-			console.log('e', reader.result)
-		};
-	};
-
-	render = () => {
-		return <Wrapper src={this.state.src}>
-			<Input type="file" name="avatar" onChange={this.onChange} />
-		</Wrapper>;
-	};
+    render = () => {
+        return <Wrapper src={this.state.src}>
+            <Input type="file" name="avatar" onChange={this.onChange}/>
+        </Wrapper>;
+    };
 };
 
 export default Avatar;
