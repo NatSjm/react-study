@@ -37,24 +37,23 @@ const Wrapper = styled(Block)`
 `;
 
 class Avatar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            src: logo
-        };
-    }
+    state = {
+    	src: logo,
+    };
 
     onChange = (e) => {
         const reader = new FileReader();
         reader.readAsDataURL(e.currentTarget.files[0]);
         reader.onload = () => {
             let newFile = reader.result;
-            this.setState({src: newFile});
+
+
+            this.setState({ src: newFile });
         };
     };
 
     render = () => {
-        return <Wrapper src={this.state.src}>
+    	return <Wrapper src={this.state.src}>
             <Input type="file" name="avatar" onChange={this.onChange}/>
         </Wrapper>;
     };

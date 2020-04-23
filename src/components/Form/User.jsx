@@ -5,6 +5,7 @@ import {
 	Email as InputEmail, 
 } from 'components/Input';
 import { Save as ButtonSave } from 'components/Button';
+import { City as SelectCity } from 'components/Select';
 import Form from './Form.jsx';
 
 const Wrapper = styled(Form)`
@@ -17,6 +18,7 @@ class User extends React.Component {
 		return <Wrapper>
 			<InputName />
 			<InputEmail />
+			<SelectCity />			
 			<ButtonSave>
 				Добавить 
 			</ButtonSave>
