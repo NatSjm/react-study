@@ -1,17 +1,16 @@
 import React from 'react';
-import * as routes from 'routes/index.js';
+import Slider from 'components/Slider';
 
-const names = [
-	'Account',
-];
+// const names = [
+// 	'Account',
+// ];
 
 
 class App extends React.Component {
 	render = () => {
-		return names.map((moduleName, i) => {
-			const Component = routes[moduleName];
-			return <Component key={i} />;
-		});
+		return <Slider>
+
+		</Slider>;
 	};
 };
 
