@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Block from 'components/Block';
+import Block from './../../components/Block';
 import Input from './Input.jsx';
-import logo from 'img/avatar.png';
+import logo from './../../img/avatar.png';
 
 const Wrapper = styled(Block)`
 	width: 200px;

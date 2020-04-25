@@ -2,7 +2,7 @@ import React from 'react';
 import { 
 	Dropdown as ButtonDropdown,
 	Option as ButtonOption, 
-} from 'components/Button';
+} from './../../components/Button';
 
 class Select extends React.Component {
 	state = {
