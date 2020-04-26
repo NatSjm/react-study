@@ -5,16 +5,24 @@ import Select from '../Select.jsx';
 const Wrapper = styled(Select)`
 	color: red;
 `;
-
+const cities = [
+	'Mariupol',
+	'Kiev',
+	'Moscow',
+	'Odessa',
+];
 class City extends React.Component {
+	state = {
+		display: true,
+	};
+
 	render = () => {
 		return <Wrapper>
-			<h3>Mariupol</h3>
-			<h3>Kiev</h3>
-			<h3>Moscow</h3>
-			<h3>Odessa</h3>
+			{Content}
 		</Wrapper>;
 	};
 };
+
+const Content = cities.map((name, i) => <h1 key={i}>{name}</h1>);
 
 export default City;

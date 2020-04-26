@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { 
 	Name as InputName,
 	Email as InputEmail, 
-} from './../../components/Input';
-import { Save as ButtonSave } from './../../components/Button';
-import { City as SelectCity } from './../../components/Select';
+} from 'components/Input';
+import { Save as ButtonSave } from 'components/Button';
+import { City as SelectCity } from 'components/Select';
 import Form from './Form.jsx';
 
 const Wrapper = styled(Form)`

@@ -2,12 +2,15 @@ import React from 'react';
 import { 
 	Dropdown as ButtonDropdown,
 	Option as ButtonOption, 
-} from './../../components/Button';
+} from 'components/Button';
 
-class Select extends React.Component {
+class Select extends React.PureComponent {
 	state = {
 		display: false,
 		index: 0,
+		// test: {
+		// 	step: 0,
+		// },
 	};
 
 	onDisplay = (e) => {
@@ -15,7 +18,7 @@ class Select extends React.Component {
 
 		this.setState((currentState) => {
 			return {
-				...currentState,
+				index: currentState.index,
 				display: !currentState.display,
 			};
 		});
@@ -33,10 +36,11 @@ class Select extends React.Component {
 	};
 
 	render = () => {
+		console.log('render');
 		const isArray = Array.isArray(this.props.children);
 
 		return <React.Fragment>
-			<ButtonDropdown onClick={this.onDisplay} className={this.props.className}>
+			<ButtonDropdown id="drop" onClick={this.onDisplay} className={this.props.className}>
 				{isArray
 					? this.props.children[this.state.index]
 					: this.props.children}
