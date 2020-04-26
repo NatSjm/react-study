@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider, {
-	Slide,
-} from 'components/Slider';
+import Tabs from 'components/Tabs';
+import Block from 'components/Block';
+import Text from 'components/Text';
 
 // const names = [
 // 	'Account',
@@ -9,28 +9,12 @@ import Slider, {
 
 
 class App extends React.Component {
-	static defaultProps = {
-		data: [{
-			id: 1,
-			text: 'oewjojg',
-			color: 'red'
-		}, {
-			color: 'blue'
-		}, {
-			color: 'green'
-		}]
-	};
-
 	render = () => {
-		const { data = [] } = this.props;
-
-		return <Slider>
-			{data.map((item, i) => {
-				return <Slide { ...item } key={i}>
-					<h1>{i}</h1>
-				</Slide>
-			})}
-		</Slider>;
+		return <Tabs>
+			<Block title={<Text>First</Text>}>
+				11111111111111111
+			</Block>
+		</Tabs>;
 	};
 };
 
