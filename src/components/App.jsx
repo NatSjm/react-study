@@ -1,7 +1,7 @@
 import React from 'react';
-import Tabs from 'components/Tabs';
+import Accordion from 'components/Accordion';
 import Block from 'components/Block';
-import Text from 'components/Text';
+
 
 // const names = [
 // 	'Account',
@@ -9,19 +9,36 @@ import Text from 'components/Text';
 
 
 class App extends React.Component {
-	render = () => {
-		return <Tabs>
-			<Block title={<Text>First</Text>}>
-				11111111111111111
-			</Block>
-			<Block title="Second">
-				2222222222222222
-			</Block>
-			<Block title="Three">
-				3333333333333333
-			</Block>
-		</Tabs>;
-	};
+    static defaultProps = {
+        data: [{
+            title: 'First',
+            content: <React.Fragment>
+                11111111111111111
+                <br />
+                2164786218947917289
+                <br />
+                92849032890
+            </React.Fragment>,
+        }, {
+            title: 'Second',
+            content: '22222222'
+        }, {
+            title: 'Third',
+            content: '3333333333'
+        }]
+    };
+
+    render = () => {
+        const { data = [] } = this.props;
+
+        return <Accordion>
+            {data.map(({ title, content }, i) => {
+                return <Block title={title} key={i}>
+                    <p>{content}</p>
+                </Block>;
+            })}
+        </Accordion>;
+    };
 };
 
 export default App;
