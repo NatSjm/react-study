@@ -1,44 +1,45 @@
 import React from 'react';
-import Accordion from 'components/Accordion';
-import Block from 'components/Block';
-
-
-// const names = [
-// 	'Account',
-// ];
-
+import { 
+	BrowserRouter, 
+	Switch,
+	Route, 
+	Link,
+} from 'react-router-dom';
+import Account from 'routes/Account';
+import Main from 'routes/Main';
 
 class App extends React.Component {
-    static defaultProps = {
-        data: [{
-            title: 'First',
-            content: <React.Fragment>
-                11111111111111111
-                <br />
-                2164786218947917289
-                <br />
-                92849032890
-            </React.Fragment>,
-        }, {
-            title: 'Second',
-            content: '22222222'
-        }, {
-            title: 'Third',
-            content: '3333333333'
-        }]
-    };
-
-    render = () => {
-        const { data = [] } = this.props;
-
-        return <Accordion>
-            {data.map(({ title, content }, i) => {
-                return <Block title={title} key={i}>
-                    <p>{content}</p>
-                </Block>;
-            })}
-        </Accordion>;
-    };
+	render = () => {
+		return <React.Fragment>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/">
+						<Main />
+					</Route>
+					<Route path="/account">
+						<Switch>
+							<Route path="/account/test">
+								Test
+							</Route>
+							<Route path="/">
+								<Account />
+							</Route>
+						</Switch>
+					</Route>
+				</Switch>
+				<h1>
+					<Link to="/account">
+						To account
+					</Link>
+				</h1>
+				<h1>
+					<Link to="/">
+						To main
+					</Link>
+				</h1>
+			</BrowserRouter>
+		</React.Fragment>;
+	};
 };
 
 export default App;
