@@ -12,7 +12,13 @@ class App extends React.Component {
     static defaultProps = {
         data: [{
             title: 'First',
-            content: '1111111111'
+            content: <React.Fragment>
+                11111111111111111
+                <br />
+                2164786218947917289
+                <br />
+                92849032890
+            </React.Fragment>,
         }, {
             title: 'Second',
             content: '22222222'
@@ -23,12 +29,13 @@ class App extends React.Component {
     };
 
     render = () => {
-        const {data = []} = this.props;
+        const { data = [] } = this.props;
+
         return <Accordion>
-            {data.map(({title, content}, i) => {
+            {data.map(({ title, content }, i) => {
                 return <Block title={title} key={i}>
                     <p>{content}</p>
-                </Block>
+                </Block>;
             })}
         </Accordion>;
     };

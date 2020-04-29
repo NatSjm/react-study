@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Flex} from 'components/Block';
+import { Flex } from 'components/Block';
 
 const AccordionItem = styled(Flex)`
     flex-direction: column;
