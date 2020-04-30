@@ -30,5 +30,6 @@ export default class AccordeonItem extends React.Component {
             <ItemButton onClick={this.props.onDisplayProp}>Открыть</ItemButton>
             {this.props.itemDisplay && <ItemText>{this.props.children}</ItemText>}
         </ItemWrap>
+
     }
 }

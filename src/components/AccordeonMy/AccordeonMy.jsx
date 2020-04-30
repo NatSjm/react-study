@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import AccordeonItem from './AccordeonItem';
+import AccordeonItem from './AccordeonItemMy';
 
 const AccordeonWrap = styled.div`
    width: 100%;
    
 `
 
-export default class Accordeon extends React.Component {
+export default class AccordeonMy extends React.Component {
 
     state = {
         itemDisplay: null
@@ -31,8 +31,7 @@ export default class Accordeon extends React.Component {
                 {this.textsArr.map((item, i) =>
                     <AccordeonItem itemDisplay={this.state.itemDisplay === i}
                     onDisplayProp={()=> this.onDisplayMethod(i)}
-                                   key={i}
-                    >{item}</AccordeonItem>)}
+                                   key={i}>{item}</AccordeonItem>)}
             </AccordeonWrap>
         </>
     }
