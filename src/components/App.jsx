@@ -1,14 +1,15 @@
 import React from 'react';
-import { 
-	BrowserRouter, 
+import {
+	BrowserRouter,
 	Switch,
-	Route, 
+	Route,
 	Link,
 } from 'react-router-dom';
 import Account from 'routes/Account';
 import Main from 'routes/Main';
 
 class App extends React.Component {
+
 	render = () => {
 		return <React.Fragment>
 			<BrowserRouter>

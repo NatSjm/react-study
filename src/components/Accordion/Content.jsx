@@ -1,3 +1,4 @@
+//import React from 'react';
 import styled from 'styled-components';
 import Block from 'components/Block';
 
@@ -8,5 +9,23 @@ const Content = styled(Block)`
     margin-left: auto;
     background-color: red;
 `;
+
+
+
+// class Content extends React.Component {
+
+
+ //   componentWillUnmount = () => {
+
+//         };
+// render = () => {
+//     return <Wrapper >
+//         {this.props.children}
+//     </Wrapper>
+//
+// };
+//      };
+
+
 
 export default Content;

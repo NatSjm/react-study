@@ -8,19 +8,53 @@ class Accordion extends React.PureComponent {
         index: -1,
     };
     enableAnimate = true;
+    refNode = null;
 
     onClick = (index) => (e) => {
         e.preventDefault();
 
-        this.setState((currentState) => ({
-            index: currentState.index === index
-                ? -1
-                : index,
-        }));
+        if (index === this.state.index && this.enableAnimate) {
+            this.enableAnimate = false;
+            this.refNode.style.height = 0;
+            setTimeout(() => {
+                this.setState(() => ({
+                    index: -1
+                }));
+                this.enableAnimate = true;
+            }, 400);
+        } else {
+            this.setState(() => ({
+                index: index,
+            }));
+        }
     };
+    // onClick = (index) => (e) => {
+    //     e.preventDefault();
+    //
+    //     if (this.refNode && this.enableAnimate) {
+    //         this.enableAnimate = false;
+    //         this.refNode.style.height = 0;
+    //
+    //         setTimeout(() => {
+    //             this.enableAnimate = true;
+    //             this.setState((currentState) => ({
+    //                 index: currentState.index === index
+    //                     ? -1
+    //                     : index,
+    //             }));
+    //         }, 400);
+    //     } else {
+    //         this.setState(() => ({
+    //             index: index,
+    //         }));
+    //     }
+    // };
 
     saveRef = (node) => {
+        this.refNode = node;
+
         if (node && this.enableAnimate) {
+
             const height = node.clientHeight;
 
             this.enableAnimate = false;
@@ -29,7 +63,8 @@ class Accordion extends React.PureComponent {
             setTimeout(() => {
                 setTimeout(() => {
                     node.style.transition = '.4s all';
-                    node.style.height = height +'px';
+                    node.style.height = height + 'px';
+
                 }, 0);
 
                 setTimeout(() => {
@@ -45,13 +80,13 @@ class Accordion extends React.PureComponent {
         const childrenArray = (!children || Array.isArray(children))
             ? children
             : new Array(children);
-        
+
         return <Block>
-            {childrenArray 
+            {childrenArray
                 ? (() => {
-                    return childrenArray.map(({ props }, i) => {
+                    return childrenArray.map(({props}, i) => {
                         return <React.Fragment key={i}>
-                            <AccordionItem 
+                            <AccordionItem
                                 key={i}
                                 className={(i === index && 'opened')}
                                 onClick={this.onClick(i)}>
