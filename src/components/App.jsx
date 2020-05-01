@@ -1,22 +1,44 @@
 import React from 'react';
-import AccordeonMy from "./AccordeonMy";
-// import Tabs from 'components/Tabs';
-// import Block from 'components/Block';
-// import Text from 'components/Text';
-
-
-// const names = [
-// 	'Account',
-// ];
-
+import { 
+	BrowserRouter, 
+	Switch,
+	Route, 
+	Link,
+} from 'react-router-dom';
+import Account from 'routes/Account';
+import Main from 'routes/Main';
 
 class App extends React.Component {
 	render = () => {
-		return <AccordeonMy>
-			{/*<Block title={<Text>First</Text>}>*/}
-			{/*	11111111111111111*/}
-			{/*</Block>*/}
-		</AccordeonMy>;
+		return <React.Fragment>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/">
+						<Main />
+					</Route>
+					<Route path="/account">
+						<Switch>
+							<Route path="/account/test">
+								Test
+							</Route>
+							<Route path="/">
+								<Account />
+							</Route>
+						</Switch>
+					</Route>
+				</Switch>
+				<h1>
+					<Link to="/account">
+						To account
+					</Link>
+				</h1>
+				<h1>
+					<Link to="/">
+						To main
+					</Link>
+				</h1>
+			</BrowserRouter>
+		</React.Fragment>;
 	};
 };
 
