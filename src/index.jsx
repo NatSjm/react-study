@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'components/App.jsx';
-import {ThemeProvider} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import * as theme from 'theme';
 
-ReactDOM.render(
-	<ThemeProvider theme = {theme}>
+ReactDOM.render( 
+	<ThemeProvider theme={theme}>
 		<App />
-	</ThemeProvider>,
+	</ThemeProvider>, 
 	document.getElementById('root')
 );

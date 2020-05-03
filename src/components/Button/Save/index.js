@@ -1,4 +1,3 @@
 import Save from './Save.jsx';
 
-
-export default Save
+export default Save;

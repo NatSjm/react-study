@@ -12,16 +12,20 @@ const Wrapper = styled(Block)`
 	object-fit: cover;
 	margin: 0 30px 10px 0;
 	background: #fff;
-
+	
 	& input {
-		display: block;
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
+	
+	${({theme})=>`
+		display: ${theme.avatar.avatarPrimary.display};
+		width: ${theme.avatar.avatarPrimary.width};
+		height: ${theme.avatar.avatarPrimary.height};
+		cursor: ${theme.avatar.avatarPrimary.cursor};
+		position: ${theme.avatar.avatarPrimary.position};
+		top: ${theme.avatar.avatarPrimary.top};
+		left: ${theme.avatar.avatarPrimary.left};
+		opacity: ${theme.avatar.avatarPrimary.opacity};
+
+	`}
 	}
 
 	&:before {

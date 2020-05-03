@@ -1,7 +1,11 @@
-import * as colors from './colors'
-import * as buttons from './buttons/primary'
+import * as colors from './colors.js';
+import * as buttons from './buttons';
+import * as inputs from './inputs';
+import * as avatar from './avatar';
 
 export {
-    colors,
-    buttons
-}
+	colors,
+	buttons,
+    inputs,
+    avatar,
+};

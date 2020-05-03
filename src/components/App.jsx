@@ -7,8 +7,21 @@ import {
 } from 'react-router-dom';
 import Account from 'routes/Account';
 import Main from 'routes/Main';
+import { changeMobile } from 'components/Events';
 
 class App extends React.Component {
+	componentDidMount = () => {
+		window.addEventListener('resize', (e) => {
+			const width = e.currentTarget.innerWidth;
+			const newFlag = width < 780;
+
+			changeMobile(newFlag);
+			window.dispatchEvent(new CustomEvent('onChangeResolution', {
+				'detail': newFlag,
+			}));
+		});
+	};
+
 	render = () => {
 		return <React.Fragment>
 			<BrowserRouter>
