@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button.jsx';
+import Button from './../Button.jsx';
 
 const Wrapper = styled(Button)`
+
+${({theme})=>`
+width: ${theme.buttons.primary.width}
+
+`}
 	width: 180px;
 	font-size: 1.4rem;
 	font-weight: bold;

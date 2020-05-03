@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Select from '../Select.jsx';
 
 const Wrapper = styled(Select)`
-	color: red;
+	color: ${({theme})=>  theme.colors.primary };
+
 `;
 const cities = [
 	'Mariupol',

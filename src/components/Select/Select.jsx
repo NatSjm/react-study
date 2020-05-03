@@ -2,7 +2,7 @@ import React from 'react';
 import { 
 	Dropdown as ButtonDropdown,
 	Option as ButtonOption, 
-} from './../../components/Button';
+} from 'components/Button';
 
 class Select extends React.PureComponent {
 	state = {
@@ -44,7 +44,6 @@ class Select extends React.PureComponent {
 				{isArray
 					? this.props.children[this.state.index]
 					: this.props.children}
-
 			</ButtonDropdown>
 			{this.state.display
 				? isArray
