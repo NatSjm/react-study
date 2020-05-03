@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Button from '../Button.jsx';
-import { checkMobile } from 'components/Events';
 
 const Wrapper = styled(Button)`
 	font-weight: bold;
@@ -10,10 +10,12 @@ const Wrapper = styled(Button)`
 	padding: 10px 0;
 	border-radius: 15px;
 
-	${({ theme }) => {
-		const type = checkMobile() 
+	${({ tablet, mobile, theme }) => {
+		const type = tablet
 			? 'primaryMobile' 
-			: 'primaryDesktop'
+			: mobile
+				? 'primaryMobile'
+				: 'primaryDesktop'
 
 		return `
 			width: ${theme.buttons[type].width};
@@ -53,10 +55,16 @@ class Save extends React.PureComponent {
 	};
 
 	render = () => {
-		return <Wrapper>
+		const { mobile, tablet } = this.props;
+
+		return <Wrapper
+			mobile={mobile}
+			tablet={tablet}>
 			{this.props.children}
 		</Wrapper>;
 	};
 };
 
-export default Save;
+export default connect((state) => ({
+	...state.resolution,
+}))(Save);
