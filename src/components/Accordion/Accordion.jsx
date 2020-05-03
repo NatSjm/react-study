@@ -10,38 +10,17 @@ class Accordion extends React.PureComponent {
     enableAnimate = true;
     refNode = null;
 
-    onClick = (index) => (e) => {
-        e.preventDefault();
-
-        if (index === this.state.index && this.enableAnimate) {
-            this.enableAnimate = false;
-            this.refNode.style.height = 0;
-            setTimeout(() => {
-                this.setState(() => ({
-                    index: -1
-                }));
-                this.enableAnimate = true;
-            }, 400);
-        } else {
-            this.setState(() => ({
-                index: index,
-            }));
-        }
-    };
     // onClick = (index) => (e) => {
     //     e.preventDefault();
     //
-    //     if (this.refNode && this.enableAnimate) {
+    //     if (index === this.state.index && this.enableAnimate) {
     //         this.enableAnimate = false;
     //         this.refNode.style.height = 0;
-    //
     //         setTimeout(() => {
-    //             this.enableAnimate = true;
-    //             this.setState((currentState) => ({
-    //                 index: currentState.index === index
-    //                     ? -1
-    //                     : index,
+    //             this.setState(() => ({
+    //                 index: -1
     //             }));
+    //             this.enableAnimate = true;
     //         }, 400);
     //     } else {
     //         this.setState(() => ({
@@ -49,6 +28,28 @@ class Accordion extends React.PureComponent {
     //         }));
     //     }
     // };
+    onClick = (index) => (e) => {
+        e.preventDefault();
+
+        if (this.refNode && this.enableAnimate) {
+            this.enableAnimate = false;
+            this.refNode.style.height = 0;
+
+            new Promise(() => {
+                setTimeout(() => {
+                    this.setState((currentState) => ({
+                        index: currentState.index === index
+                            ? -1
+                            : index,
+                    }));
+                }, 500);
+            }).then(this.enableAnimate = true);
+        } else {
+            this.setState(() => ({
+                index: index,
+            }));
+        }
+    };
 
     saveRef = (node) => {
         this.refNode = node;
@@ -64,7 +65,6 @@ class Accordion extends React.PureComponent {
                 setTimeout(() => {
                     node.style.transition = '.4s all';
                     node.style.height = height + 'px';
-
                 }, 0);
 
                 setTimeout(() => {
@@ -75,8 +75,8 @@ class Accordion extends React.PureComponent {
     };
 
     render = () => {
-        const {index} = this.state;
-        const {children} = this.props;
+        const { index } = this.state;
+        const { children } = this.props;
         const childrenArray = (!children || Array.isArray(children))
             ? children
             : new Array(children);
@@ -84,17 +84,17 @@ class Accordion extends React.PureComponent {
         return <Block>
             {childrenArray
                 ? (() => {
-                    return childrenArray.map(({props}, i) => {
+                    return childrenArray.map(({ props }, i) => {
                         return <React.Fragment key={i}>
                             <AccordionItem
-                                key={i}
+                                key={ i }
                                 className={(i === index && 'opened')}
                                 onClick={this.onClick(i)}>
-                                <h3>{props.title}</h3>
+                                <h3>{ props.title }</h3>
                             </AccordionItem>
                             {(i === index) && <Content
                                 ref={this.saveRef}>
-                                {props.children}
+                                { props.children }
                             </Content>}
                         </React.Fragment>
                     });
