@@ -5,20 +5,24 @@ import {
 	Route, 
 	Link,
 } from 'react-router-dom';
+import Store from 'components/Store';
 import Account from 'routes/Account';
 import Main from 'routes/Main';
-import { changeMobile } from 'components/Events';
 
 class App extends React.Component {
 	componentDidMount = () => {
 		window.addEventListener('resize', (e) => {
 			const width = e.currentTarget.innerWidth;
-			const newFlag = width < 780;
+			const tabletFlag = width < 780 && width > 420;
+			const mobileFlag = width < 420;
 
-			changeMobile(newFlag);
-			window.dispatchEvent(new CustomEvent('onChangeResolution', {
-				'detail': newFlag,
-			}));
+			Store.dispatch({
+				type: tabletFlag
+					? 'TABLET'
+					: mobileFlag
+						? 'MOBILE'
+						: '',
+			});
 		});
 	};
 

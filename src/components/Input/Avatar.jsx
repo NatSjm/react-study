@@ -11,18 +11,19 @@ const Wrapper = styled(Block)`
 	border: 5px solid rgb(94, 94, 243);
 	object-fit: cover;
 	margin: 0 30px 10px 0;
-	background: #fff;
+	background: #fff;& input {
+	
+	${({ theme })=> `
+		display: ${theme.avatar.avatarPrimary.display};
+		width: ${theme.avatar.avatarPrimary.width};
+		height: ${theme.avatar.avatarPrimary.height};
+		cursor: ${theme.avatar.avatarPrimary.cursor};
+		position: ${theme.avatar.avatarPrimary.position};
+		top: ${theme.avatar.avatarPrimary.top};
+		left: ${theme.avatar.avatarPrimary.left};
+		opacity: ${theme.avatar.avatarPrimary.opacity};
 
-	& input {
-		display: block;
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-	}
+	`}}
 
 	&:before {
 		content: '';
@@ -37,26 +38,26 @@ const Wrapper = styled(Block)`
 `;
 
 class Avatar extends React.Component {
-    state = {
-    	src: logo,
-    };
+	state = {
+		src: logo,
+	};
 
-    onChange = (e) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(e.currentTarget.files[0]);
-        reader.onload = () => {
-            let newFile = reader.result;
+	onChange = (e) => {
+		const reader = new FileReader();
+		reader.readAsDataURL(e.currentTarget.files[0]);
+		reader.onload = () => {
+			let newFile = reader.result;
 
 
-            this.setState({ src: newFile });
-        };
-    };
+			this.setState({ src: newFile });
+		};
+	};
 
-    render = () => {
-    	return <Wrapper src={this.state.src}>
-            <Input type="file" name="avatar" onChange={this.onChange}/>
-        </Wrapper>;
-    };
+	render = () => {
+		return <Wrapper src={this.state.src}>
+			<Input type="file" name="avatar" onChange={this.onChange}/>
+		</Wrapper>;
+	};
 };
 
 export default Avatar;
