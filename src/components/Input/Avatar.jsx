@@ -11,7 +11,9 @@ const Wrapper = styled(Block)`
 	border: 5px solid rgb(94, 94, 243);
 	object-fit: cover;
 	margin: 0 30px 10px 0;
-	background: #fff;& input {
+	flex-shrink: 0;
+	background: #fff;
+	& input {
 	
 	${({ theme })=> `
 		display: ${theme.avatar.avatarPrimary.display};

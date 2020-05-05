@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Store from 'components/Store';
-import Primary from './Primary.jsx';
+//import Store from 'components/Store';
+//import Primary from './Primary.jsx';
 
 class Email extends React.Component {
 	render = () => {

@@ -6,12 +6,12 @@ import { User as FormUser } from 'components/Form';
 class Account extends React.Component {
 	render = () => {
 		return <>
-			<BlockPrimary>
-				<InputAvatar />
+			<BlockPrimary >
+				<InputAvatar style={{backgroundColor: 'blue'}}/>
 				<FormUser />
 			</BlockPrimary>
 		</>;
-		
+
 	};
 };
 

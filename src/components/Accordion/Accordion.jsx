@@ -10,6 +10,7 @@ class Accordion extends React.PureComponent {
     enableAnimate = true;
     refNode = null;
 
+
     // onClick = (index) => (e) => {
     //     e.preventDefault();
     //
@@ -28,26 +29,27 @@ class Accordion extends React.PureComponent {
     //         }));
     //     }
     // };
+
+    stateSetter = (index) => {
+        this.setState((currentState) => ({
+            index: currentState.index === index
+                ? -1
+                : index,
+        }));
+    };
     onClick = (index) => (e) => {
         e.preventDefault();
 
         if (this.refNode && this.enableAnimate) {
             this.enableAnimate = false;
             this.refNode.style.height = 0;
-
             new Promise(() => {
                 setTimeout(() => {
-                    this.setState((currentState) => ({
-                        index: currentState.index === index
-                            ? -1
-                            : index,
-                    }));
+                    this.stateSetter(index)
                 }, 500);
             }).then(this.enableAnimate = true);
         } else {
-            this.setState(() => ({
-                index: index,
-            }));
+            this.stateSetter(index);
         }
     };
 
@@ -75,26 +77,26 @@ class Accordion extends React.PureComponent {
     };
 
     render = () => {
-        const { index } = this.state;
-        const { children } = this.props;
+        const {index} = this.state;
+        const {children} = this.props;
         const childrenArray = (!children || Array.isArray(children))
             ? children
-            : new Array(children);
+            : [children];
 
         return <Block>
             {childrenArray
                 ? (() => {
-                    return childrenArray.map(({ props }, i) => {
+                    return childrenArray.map(({props}, i) => {
                         return <React.Fragment key={i}>
                             <AccordionItem
-                                key={ i }
+                                key={i}
                                 className={(i === index && 'opened')}
                                 onClick={this.onClick(i)}>
-                                <h3>{ props.title }</h3>
+                                <h3>{props.title}</h3>
                             </AccordionItem>
                             {(i === index) && <Content
                                 ref={this.saveRef}>
-                                { props.children }
+                                {props.children}
                             </Content>}
                         </React.Fragment>
                     });
