@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Store from 'components/Store';
 import Account from 'routes/Account';
-import Main from 'routes/Main';
+import Main from 'routes/Main/index.js';
 
 class App extends React.Component {
 
