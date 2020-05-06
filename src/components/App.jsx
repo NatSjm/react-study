@@ -5,25 +5,16 @@ import {
 	Route, 
 	Link,
 } from 'react-router-dom';
-import Store from 'components/Store';
 import Account from 'routes/Account';
 import Main from 'routes/Main';
+import News from 'routes/News';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { resolution } from 'components/Store/actions';
 
 class App extends React.Component {
 	componentDidMount = () => {
-		window.addEventListener('resize', (e) => {
-			const width = e.currentTarget.innerWidth;
-			const tabletFlag = width < 780 && width > 420;
-			const mobileFlag = width < 420;
-
-			Store.dispatch({
-				type: tabletFlag
-					? 'TABLET'
-					: mobileFlag
-						? 'MOBILE'
-						: '',
-			});
-		});
+		window.addEventListener('resize', this.props.resolution);
 	};
 
 	render = () => {
@@ -32,6 +23,9 @@ class App extends React.Component {
 				<Switch>
 					<Route exact path="/">
 						<Main />
+					</Route>
+					<Route exact path="/news">
+						<News />
 					</Route>
 					<Route path="/account">
 						<Switch>
@@ -59,4 +53,8 @@ class App extends React.Component {
 	};
 };
 
-export default App;
+export default connect(undefined, (dispatch) => {
+	return {
+		resolution: bindActionCreators(resolution, dispatch),
+	};
+})(App);
