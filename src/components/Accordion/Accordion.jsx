@@ -55,8 +55,8 @@ class Accordion extends React.PureComponent {
     };
 
     render = () => {
-        const index = this.props.activeIndex;
-        const accordionItems = this.props.accordionItems;
+        const { activeIndex: index, accordionItems} = this.props;
+
         return <Block>
             {accordionItems
                 ? (() => {

@@ -50,11 +50,11 @@ class Save extends React.PureComponent {
 		children: 'Сохранить',
 	};
 
-	componentDidMount = () => {
-		window.addEventListener('onChangeResolution', (e) => {
-			this.forceUpdate();
-		});
-	};
+	// componentDidMount = () => {
+	// 	window.addEventListener('onChangeResolution', (e) => {
+	// 		this.forceUpdate();
+	// 	});
+	// };
 
 	render = () => {
 		const { mobile, tablet } = this.props;

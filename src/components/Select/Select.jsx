@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
+import {
 	Dropdown as ButtonDropdown,
-	Option as ButtonOption, 
+	Option as ButtonOption,
 } from 'components/Button';
 
 class Select extends React.PureComponent {
@@ -36,7 +36,6 @@ class Select extends React.PureComponent {
 	};
 
 	render = () => {
-		console.log('render');
 		const isArray = Array.isArray(this.props.children);
 
 		return <React.Fragment>
@@ -50,7 +49,7 @@ class Select extends React.PureComponent {
 					? this.props
 						.children
 						.map((item, index) => {
-							return <ButtonOption 
+							return <ButtonOption
 								key={index}
 								onClick={this.onClickItem(index)}>
 								{item}
