@@ -10,23 +10,25 @@ import Account from 'routes/Account';
 import Main from 'routes/Main';
 
 class App extends React.Component {
-    componentDidMount = () => {
-        const resizer = (e) => {
-            const width = e.currentTarget.innerWidth;
-            const tabletFlag = width < 780 && width > 420;
-            const mobileFlag = width < 420;
-            console.log('1', mobileFlag, tabletFlag);
-            Store.dispatch({
-                type: tabletFlag
-                    ? 'TABLET'
-                    : mobileFlag
-                        ? 'MOBILE'
-                        : 'DESCTOP',
-            });
 
-        };
-        window.addEventListener('resize', resizer);
+    componentDidMount = () => {
+        window.addEventListener('resize', this.resizer);
         window.dispatchEvent(new Event('resize'));
+    };
+
+     resizer = (e) => {
+        const width = e.currentTarget.innerWidth;
+        const tabletFlag = width < 780 && width > 420;
+        const mobileFlag = width < 420;
+
+        Store.dispatch({
+            type: tabletFlag
+                ? 'TABLET'
+                : mobileFlag
+                    ? 'MOBILE'
+                    : 'DESCTOP',
+        });
+
     };
 
 

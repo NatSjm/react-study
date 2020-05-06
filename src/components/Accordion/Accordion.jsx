@@ -2,41 +2,19 @@ import React from 'react';
 import Block from 'components/Block';
 import AccordionItem from './AccordionItem.jsx';
 import Content from './Content.jsx';
+import {connect} from "react-redux";
 
 class Accordion extends React.PureComponent {
-    state = {
-        index: -1,
-    };
     enableAnimate = true;
     refNode = null;
 
-
-    // onClick = (index) => (e) => {
-    //     e.preventDefault();
-    //
-    //     if (index === this.state.index && this.enableAnimate) {
-    //         this.enableAnimate = false;
-    //         this.refNode.style.height = 0;
-    //         setTimeout(() => {
-    //             this.setState(() => ({
-    //                 index: -1
-    //             }));
-    //             this.enableAnimate = true;
-    //         }, 400);
-    //     } else {
-    //         this.setState(() => ({
-    //             index: index,
-    //         }));
-    //     }
-    // };
-
     stateSetter = (index) => {
-        this.setState((currentState) => ({
-            index: currentState.index === index
-                ? -1
-                : index,
-        }));
+        this.props.dispatch({
+            type: 'CHANGE_INDEX',
+            payload: index
+        });
     };
+
     onClick = (index) => (e) => {
         e.preventDefault();
 
@@ -77,26 +55,22 @@ class Accordion extends React.PureComponent {
     };
 
     render = () => {
-        const {index} = this.state;
-        const {children} = this.props;
-        const childrenArray = (!children || Array.isArray(children))
-            ? children
-            : [children];
-
+        const index = this.props.activeIndex;
+        const accordionItems = this.props.accordionItems;
         return <Block>
-            {childrenArray
+            {accordionItems
                 ? (() => {
-                    return childrenArray.map(({props}, i) => {
+                    return accordionItems.map(({ title, content }, i) => {
                         return <React.Fragment key={i}>
                             <AccordionItem
                                 key={i}
-                                className={(i === index && 'opened')}
-                                onClick={this.onClick(i)}>
-                                <h3>{props.title}</h3>
+                                className={ (i === index && 'opened') }
+                                onClick={ this.onClick(i) }>
+                                <h3>{ title }</h3>
                             </AccordionItem>
                             {(i === index) && <Content
-                                ref={this.saveRef}>
-                                {props.children}
+                                ref={ this.saveRef }>
+                                <p>{ content }</p>
                             </Content>}
                         </React.Fragment>
                     });
@@ -106,4 +80,8 @@ class Accordion extends React.PureComponent {
     };
 };
 
-export default Accordion;
+export default connect((state) => {
+    return {
+        ...state.accordion,
+    };
+})(Accordion);

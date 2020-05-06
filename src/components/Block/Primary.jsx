@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Flex from './Flex.jsx';
 import {connect} from 'react-redux';
-import React from "react";
+//import React from "react";
 
 const Primary = styled(Flex)`
 	background-color: rgba(121, 121, 132, .4);
