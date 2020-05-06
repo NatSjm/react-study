@@ -2,21 +2,21 @@ import React from 'react';
 import { 
 	createStore,
 	combineReducers, 
+	applyMiddleware,
 } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider as ReduxProvider } from 'react-redux';
 import * as reducers from './reducers';
 
-const store = createStore(combineReducers(reducers));
+const testMiddleware = (store) => {
+	return (next) => {
+		return (action) => {
+			return next(action);
+		};
+	};
+};
 
-setTimeout(() => {
-	store.dispatch({ 
-		type: 'UPDATE', 
-		payload: { 
-			email: 'test@mail.com', 
-			name: 'Jonh' 
-		} 
-	});
-}, 4000);
+const store = createStore(combineReducers(reducers), undefined, applyMiddleware(thunk, testMiddleware));
 
 class Provider extends React.PureComponent {
 	render = () => {
