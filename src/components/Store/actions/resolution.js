@@ -9,7 +9,7 @@ const resolution = (e) => (dispatch) => {
 			? 'TABLET'
 			: mobileFlag
 				? 'MOBILE'
-				: '',
+				: 'DESCTOP',
 	});
 };
 

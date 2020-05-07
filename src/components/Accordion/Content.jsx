@@ -9,6 +9,7 @@ const Content = styled(Block)`
     padding-left: 10px;
     margin-bottom: 10px;
     border-radius: 2px;
+    margin: 0 auto;
     ${ ({ theme }) => `background-color: ${theme.colors.lime};` }
 `;
 

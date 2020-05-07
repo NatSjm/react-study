@@ -1,5 +1,5 @@
 import React from 'react';
-import Accordion from 'components/Accordion';
+
 
 
 class Main extends React.Component {
@@ -7,8 +7,7 @@ class Main extends React.Component {
     render = () => {
 
         return <div>
-            Main
-            <Accordion/>
+            <h1>Main</h1>
               </div>;
     };
 };
