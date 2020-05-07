@@ -12,7 +12,7 @@ const Wrapper = styled(Primary)`
 	background-color: transparent;
 	& a{
 	text-decoration: none;
-	color: black;
+	color: white;
 	}
 `;
 

@@ -29,21 +29,21 @@ class App extends React.Component {
             <BrowserRouter>
                 <Header>
                     <Navigation>
-                    <h1>
+                    <h2>
                         <Link to="/account">
                             To account
                         </Link>
-                    </h1>
-                    <h1>
+                    </h2>
+                    <h2>
                         <Link to="/news">
                             To news
                         </Link>
-                    </h1>
-                    <h1>
+                    </h2>
+                    <h2>
                         <Link to="/">
                             To main
                         </Link>
-                    </h1>
+                    </h2>
                     </Navigation>
                 </Header>
                 <Switch>
