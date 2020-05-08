@@ -5,6 +5,7 @@ const response = fetch('http://localhost:3006/news');
 	response.then((data) => {
 		data.text().then((data) => {
 			data = JSON.parse(data);
+			console.log(data);
 			dispatch({
 				type: 'SET_NEWS',
 				payload: data,

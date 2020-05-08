@@ -1,4 +1,5 @@
 import React from 'react';
+import {PageTitle} from 'components/Text';
 
 
 
@@ -7,7 +8,7 @@ class Main extends React.Component {
     render = () => {
 
         return <div>
-            <h1>Main</h1>
+            <PageTitle>Main</PageTitle>
               </div>;
     };
 };

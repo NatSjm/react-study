@@ -2,12 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {Primary} from 'components/Block';
 import {
-    BrowserRouter,
-    Switch,
-    Route,
     Link,
 } from 'react-router-dom';
-import {Main} from 'routes';
 
 const Wrapper = styled(Primary)`
     background-color: #1C1C25;
@@ -24,9 +20,7 @@ const Wrapper = styled(Primary)`
 	  }
 	  & a{
 	  text-decoration: none;
-	  }
-	
-	
+	  }	
 `;
 
 class Header extends React.Component {
