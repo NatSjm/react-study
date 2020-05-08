@@ -1,5 +1,6 @@
 import React from 'react';
-import Accordion from 'components/Accordion';
+import {PageTitle} from 'components/Text';
+
 
 
 class Main extends React.Component {
@@ -8,8 +9,7 @@ class Main extends React.Component {
 
     	console.log('weoojgfiwejigj')
         return <div>
-            Main
-            <Accordion/>
+            <PageTitle>Main</PageTitle>
               </div>;
     };
 };

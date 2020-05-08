@@ -29,7 +29,6 @@ class User extends React.Component {
 
     render = () => {
         const { mobile, tablet } = this.props;
-
         return <Wrapper
             mobile={ mobile }
             tablet={ tablet }>
