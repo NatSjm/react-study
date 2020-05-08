@@ -3,7 +3,7 @@ import {
     BrowserRouter,
     Switch,
     Route,
-    Link,
+//    Link,
 } from 'react-router-dom';
 import {
     Account,
@@ -27,25 +27,9 @@ class App extends React.Component {
         return <React.Fragment>
 
             <BrowserRouter>
-                <Header>
-                    <Navigation>
-                    <h2>
-                        <Link to="/account">
-                            To account
-                        </Link>
-                    </h2>
-                    <h2>
-                        <Link to="/news">
-                            To news
-                        </Link>
-                    </h2>
-                    <h2>
-                        <Link to="/">
-                            To main
-                        </Link>
-                    </h2>
-                    </Navigation>
-                </Header>
+                <Header/>
+                    <Navigation/>
+
                 <Switch>
                     <Route exact path="/">
                         <Main/>

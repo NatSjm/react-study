@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Primary} from 'components/Block';
+import Navigation from 'components/Navigation';
 import {
     Link,
 } from 'react-router-dom';
@@ -32,7 +33,7 @@ class Header extends React.Component {
                     Logo
                     </h1>
                 </Link>
-            { this.props.children }
+            <Navigation/>
         </Wrapper>;
     };
 };

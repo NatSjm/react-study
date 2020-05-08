@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Primary} from 'components/Block';
+import {
+    Link,
+} from 'react-router-dom';
 
 const Wrapper = styled(Primary)`
 	flex-direction: row;
@@ -20,7 +23,21 @@ class Navigation extends React.Component {
 
     render = () => {
         return <Wrapper>
-            { this.props.children }
+            <h2>
+                <Link to="/account">
+                    To account
+                </Link>
+            </h2>
+            <h2>
+                <Link to="/news">
+                    To news
+                </Link>
+            </h2>
+            <h2>
+                <Link to="/">
+                    To main
+                </Link>
+            </h2>
         </Wrapper>;
     };
 };
