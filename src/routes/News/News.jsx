@@ -2,42 +2,33 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {news} from 'components/Store/actions';
-import Block from 'components/Block';
-import {PageTitle} from 'components/Text';
 import {NewsItem} from 'components/News';
-import Loader from 'components/Loader'
+import Paginate from 'components/Paginate';
 
 class News extends React.Component {
-    static defaultProps = {
-        data: [],
-    };
+	static defaultProps = {
+		data: [],
+	};
 
-    componentDidMount = () => {
-        this.props.news.get();
-    };
+	render = () => {
+		const { data } = this.props;
 
-    render = () => {
-        const { data } = this.props;
-        return <Block>
-            <PageTitle>Новости</PageTitle>
-            { (data && data.length)
-                ? (() => {
-                    return data.map((item, i) => {
-                        return <NewsItem
-                            key={ i }
-                            newsItem={ item }/>
-                    });
-                })()
-                : <Loader/>
-            }
-        </Block>;
-    };
+		return <React.Fragment>
+			<Paginate func={this.props.news.get}>
+			{data.map((item, i) => {
+				return <NewsItem
+					key={ i }
+					newsItem={ item }/>
+			})}
+			</Paginate>
+		</React.Fragment>;
+	};
 };
 
 export default connect((store) => ({
-    data: store.news,
+	data: store.news,
 }), (dispatch) => ({
-    news: bindActionCreators(news, dispatch),
+	news: bindActionCreators(news, dispatch),
 }))(News);
 
 

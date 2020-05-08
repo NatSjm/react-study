@@ -1,0 +1,550 @@
+{
+    "source": "mockoon:1.7.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 9,
+                "name": "drivedatum",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3005,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{\n    \"path\": \"messeges\",\n    \"description\": \"Пользовательскиe сообщения\",\n    \"icon\": \"forum\",\n    \"type\": \"local\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteOne\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"dialogs\",\n    \"description\": \"Диалоги и чаты\",\n    \"icon\": \"forum\",\n    \"type\": \"local\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"refresh\", \"deleteOne\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"groups\",\n    \"description\": \"Группы\",\n    \"icon\": \"forum\",\n    \"type\": \"local\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteMany\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"channels\",\n    \"description\": \"Каналы\",\n    \"icon\": \"forum\",\n    \"type\": \"local\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteOne\", \"deleteMany\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"users\",\n    \"description\": \"Список пользователей\",\n    \"icon\": \"people_alt\",\n    \"type\": \"users\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteMany\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"roles\",\n    \"description\": \"Настройка доступов\",\n    \"icon\": \"assignment_ind\",\n    \"type\": \"roles\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteMany\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n},{\n    \"path\": \"category\",\n    \"description\": \"Разделы и категории\",\n    \"icon\": \"bookmarks\",\n    \"type\": \"categories\",\n    \"call_count\": {{ int 17 92 }},\n    \"status\": 1,\n    \"methods\": [ \"getOne\", \"getMany\", \"create\", \"update\", \"deleteMany\", \"copy\" ],\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}]\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "chats/routes",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n    \"msg\": \"created\"\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/crones",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{\n    \"time\": {\n        \"hours\": [ {{ int 0 23 }} ],\n        \"minutes\": [ {{ int 1 59 }} ]\n    },\n    \"type\": \"deleteMany\",\n    \"description\": \"Очистка старых и не нужные записи\",\n    \"status\": 1,\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}, {\n    \"time\": {\n        \"hours\": [ {{ int 0 23 }} ],\n        \"minutes\": [ {{ int 1 59 }} ]\n    },\n    \"type\": \"create\",\n    \"description\": \"Добавить тестовую запись\",\n    \"status\": 1,\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}]\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/statistics/locations",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\n    [ \"00:00\", {{ int 0 300 }} ],\n    [ \"01:00\", {{ int 0 300 }} ],\n    [ \"02:00\", {{ int 0 300 }} ],\n    [ \"03:00\", {{ int 0 300 }} ],\n    [ \"04:00\", {{ int 0 300 }} ],\n    [ \"05:00\", {{ int 0 300 }} ],\n    [ \"06:00\", {{ int 0 300 }} ],\n    [ \"07:00\", {{ int 0 300 }} ],\n    [ \"08:00\", {{ int 0 300 }} ],\n    [ \"09:00\", {{ int 0 300 }} ],\n    [ \"10:00\", {{ int 0 300 }} ],\n    [ \"11:00\", {{ int 0 300 }} ],\n    [ \"12:00\", {{ int 0 300 }} ],\n    [ \"13:00\", {{ int 0 300 }} ],\n    [ \"14:00\", {{ int 0 300 }} ],\n    [ \"15:00\", {{ int 0 300 }} ],\n    [ \"16:00\", {{ int 0 300 }} ],\n    [ \"17:00\", {{ int 0 300 }} ],\n    [ \"18:00\", {{ int 0 300 }} ],\n    [ \"19:00\", {{ int 0 300 }} ],\n    [ \"20:00\", {{ int 0 300 }} ],\n    [ \"21:00\", {{ int 0 300 }} ],\n    [ \"22:00\", {{ int 0 300 }} ],\n    [ \"23:00\", {{ int 0 300 }} ]\n]\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/statistics/devices",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\n    [ \"00:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"01:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"02:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"03:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"04:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"05:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"06:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"07:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"08:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"09:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"10:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"11:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"12:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"13:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"14:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"15:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"16:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"17:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"18:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"19:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"20:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"21:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"22:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ],\n    [ \"23:00\", {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }}, {{ int 0 300 }} ]\n]\n\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/statistics/routes",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\n    [ \"00:00\", {{ int 0 300 }} ],\n    [ \"01:00\", {{ int 0 300 }} ],\n    [ \"02:00\", {{ int 0 300 }} ],\n    [ \"03:00\", {{ int 0 300 }} ],\n    [ \"04:00\", {{ int 0 300 }} ],\n    [ \"05:00\", {{ int 0 300 }} ],\n    [ \"06:00\", {{ int 0 300 }} ],\n    [ \"07:00\", {{ int 0 300 }} ],\n    [ \"08:00\", {{ int 0 300 }} ],\n    [ \"09:00\", {{ int 0 300 }} ],\n    [ \"10:00\", {{ int 0 300 }} ],\n    [ \"11:00\", {{ int 0 300 }} ],\n    [ \"12:00\", {{ int 0 300 }} ],\n    [ \"13:00\", {{ int 0 300 }} ],\n    [ \"14:00\", {{ int 0 300 }} ],\n    [ \"15:00\", {{ int 0 300 }} ],\n    [ \"16:00\", {{ int 0 300 }} ],\n    [ \"17:00\", {{ int 0 300 }} ],\n    [ \"18:00\", {{ int 0 300 }} ],\n    [ \"19:00\", {{ int 0 300 }} ],\n    [ \"20:00\", {{ int 0 300 }} ],\n    [ \"21:00\", {{ int 0 300 }} ],\n    [ \"22:00\", {{ int 0 300 }} ],\n    [ \"23:00\", {{ int 0 300 }} ]\n]\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/metrics",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{\n    \"title\": \"После google.com\",\n    \"type\": \"referrer\",\n    \"value\": {{ int 34 274 }},\n    \"time\": {},\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}, {\n    \"title\": \"Создание сообщений ночью\",\n    \"type\": \"create\",\n    \"value\": {{ int 34 274 }},\n    \"time\": {\n        \"hours\": [ 22, 5 ],\n        \"minutes\": [ {{ int 1 59 }}, {{ int 1 59 }} ]\n    },\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/logs/1",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{{#repeat 10}}{\n    \"id\": {{@index}},\n    \"user_id\": {{ int 0 5 }},\n    \"user_name\": \"{{ firstName }} {{ lastName }}\",\n    \"ip\": \"{{ ipv4 }}\",\n    \"location\": \"{{ country }}, {{ city }}\",\n    \"device\": \"Ubuntu 18.04\",\n    \"browser\": \"Mozilla Firefox\",\n    \"cookies\": \"{{ lorem }}\",\n    \"request\": {\n        \"URL\": \"http://127.0.0.1:3000/user1/chats#logs\",\n        \"Method\": \"GET\",\n        \"User-Agent\": \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:75.0) Gecko/20100101 Firefox/75.0\",\n        \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n        \"Accept-Language\": \"en-US,en;q=0.5\",\n        \"Cache-Control\": \"no-cache\",\n        \"Connection\": \"keep-alive\",\n        \"Pragma\": \"no-cache\",\n        \"Host\": \"127.0.0.1:3000\",\n        \"Upgrade-Insecure-Requests\": \"1\"\n    },\n    \"created_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}{{/ repeat}}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/logs/2",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{{#repeat 10}}{\n    \"id\": {{@index}},\n    \"user_id\": {{ int 0 5 }},\n    \"user_name\": \"{{ firstName }} {{ lastName }}\",\n    \"ip\": \"{{ ipv4 }}\",\n    \"location\": \"{{ country }}, {{ city }}\",\n    \"device\": \"apple\",\n    \"browser\": \"safari\",\n    \"cookies\": \"{{ lorem }}\",\n    \"request\": {\n        \"URL\": \"http://127.0.0.1:3000/user1/chats#logs\",\n        \"Method\": \"GET\",\n        \"User-Agent\": \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:75.0) Gecko/20100101 Firefox/75.0\",\n        \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n        \"Accept-Language\": \"en-US,en;q=0.5\",\n        \"Cache-Control\": \"no-cache\",\n        \"Connection\": \"keep-alive\",\n        \"Pragma\": \"no-cache\",\n        \"Host\": \"127.0.0.1:3000\",\n        \"Upgrade-Insecure-Requests\": \"1\"\n    },\n    \"created_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}{{/ repeat}}]\n\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/logs/3",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{{#repeat 7}}{\n    \"id\": {{@index}},\n    \"user_id\": {{ int 0 5 }},\n    \"user_name\": \"{{ firstName }} {{ lastName }}\",\n    \"ip\": \"{{ ipv4 }}\",\n    \"location\": \"{{ country }}, {{ city }}\",\n    \"device\": \"apple\",\n    \"browser\": \"safari\",\n    \"cookies\": \"{{ lorem }}\",\n    \"request\": {\n        \"URL\": \"http://127.0.0.1:3000/user1/chats#logs\",\n        \"Method\": \"GET\",\n        \"User-Agent\": \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:75.0) Gecko/20100101 Firefox/75.0\",\n        \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n        \"Accept-Language\": \"en-US,en;q=0.5\",\n        \"Cache-Control\": \"no-cache\",\n        \"Connection\": \"keep-alive\",\n        \"Pragma\": \"no-cache\",\n        \"Host\": \"127.0.0.1:3000\",\n        \"Upgrade-Insecure-Requests\": \"1\"\n    },\n    \"created_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}{{/ repeat}}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes/messages",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n    \"path\": \"messages\",\n    \"description\": \"Пользовательскиe сообщения\",\n    \"methods\": [{\n        \"type\": \"getOne\",\n        \"title\": \"Получить один элемент\",\n        \"status\": 1,\n        \"request\": [{\n            \"name\": \"ID\",\n            \"description\": \"Уникальный идентификатор элемента\",\n            \"type\": 0,\n            \"use\": 0,\n            \"status\": 1\n        }],\n        \"response\": {\n            \"200\": {\n                \"type\": 0,\n                \"data\": {\n                    \"id\": {\n                        \"val\": {{ int 0 100 }},\n                        \"type\": 0\n                    },\n                    \"dialog_id\": {\n                        \"val\": {{ int 0 100 }},\n                        \"type\": 0\n                    },\n                    \"autor_id\": {\n                        \"val\": {{ int 0 100 }},\n                        \"type\": 0\n                    },\n                    \"body\": {\n                        \"val\": \"{{ title }}\",\n                        \"type\": 1\n                    },\n                    \"is_secret\": {\n                        \"val\": {{ int 0 1 }},\n                        \"type\": 0\n                    },\n                    \"created_at\": {\n                        \"val\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n                        \"type\": 2\n                    },\n                    \"updated_at\": {\n                        \"val\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n                        \"type\": 2\n                    }\n                }\n            },\n            \"401\": {\n                \"type\": 0,\n                \"data\": {\n                    \"title\": {\n                        \"val\": \"error401Title\",\n                        \"type\": 1\n                    },\n                    \"body\": {\n                        \"val\": \"error401Body\",\n                        \"type\": 1\n                    }\n                }\n            },\n            \"403\": {\n                \"type\": 0,\n                \"data\": {\n                    \"title\": {\n                        \"val\": \"error401Title\",\n                        \"type\": 1\n                    },\n                    \"body\": {\n                        \"val\": \"error401Body\",\n                        \"type\": 1\n                    }\n                }\n            },\n            \"404\": {\n                \"type\": 0,\n                \"data\": {\n                    \"title\": {\n                        \"val\": \"error401Title\",\n                        \"type\": 1\n                    },\n                    \"body\": {\n                        \"val\": \"error401Body\",\n                        \"type\": 1\n                    }\n                }\n            },\n            \"500\": {\n                \"type\": 0,\n                \"data\": {\n                    \"title\": {\n                        \"val\": \"error401Title\",\n                        \"type\": 1\n                    },\n                    \"body\": {\n                        \"val\": \"error401Body\",\n                        \"type\": 1\n                    }\n                }\n            }\n        }\n    }]\n}\n\n\n\n\n\n",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes/messages/data",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{{#repeat 20}}\n    {\n        \"id\": {{@index}},\n        \"dialog_id\": {{ int 1 12 }},\n        \"autor_id\": {{ int 1 39 }},\n        \"body\": \"{{ lorem }}\",\n        \"is_secret\": {{ int 0 1 }},\n        \"created_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n        \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n    }\n{{/ repeat}}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes/messages/middlewares",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{{#repeat 7}}\n    {\n        \"id\": {{@index}},\n        \"index\": 0,\n        \"action\": {{ int 0 11 }},\n        \"is_async\": {{ int 0 1 }},\n        \"created_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n        \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n        \"response\": {\n            \"status\": 200,\n            \"type\": 0,\n            \"data\": {\n                \"title\": {\n                    \"val\": \"{{ title }}\",\n                    \"type\": 1\n                },\n                \"body\": {\n                    \"val\": \"{{ lorem }}\",\n                    \"type\": 1\n                }\n            }\n        }\n    }\n{{/ repeat}}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes/messages/controllers",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{\n    \"id\": 1,\n    \"index\": 0,\n    \"service\": \"email\",\n    \"route\": \"mail\",\n    \"method\": \"runFunnel\",\n    \"is_async\": {{ int 0 1 }},\n    \"updated_at\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\"\n}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "chats/routes/messages/accesses",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[{\n    \"type\": 1,\n    \"groups\": [ \"host\", \"member\", \"manager\", \"admin\" ]\n}, {\n    \"type\": 2,\n    \"groups\": [ \"member\", \"manager\", \"admin\" ]\n}, {\n    \"type\": 3,\n    \"groups\": [ \"member\", \"manager\", \"admin\" ]\n}, {\n    \"type\": 3,\n    \"groups\": [ \"member\", \"manager\", \"admin\" ]\n}, {\n    \"type\": 4,\n    \"groups\": [ \"member\", \"manager\", \"admin\" ]\n}]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Origin",
+                        "value": "*"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Methods",
+                        "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Headers",
+                        "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 9,
+                "name": "project91",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3006,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "news/1",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n\t\"next_page\": \"http://127.0.0.1/news/2\",\n\t\"total\": 37,\n\t\"items\": [{{#repeat 10}}\n\t\t{\n\t\t\t\"id\": {{@index}},\n\t\t    \"title\": \"{{title}}\",\n\t\t    \"description\": \"{{lorem}}\",\n\t\t    \"published\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n\t\t    \"category\": \"{{title}}\"\n\t\t}\n\t\t{{/ repeat}}]\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "news/2",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n\t\"next_page\": \"http://127.0.0.1/news/3\",\n\t\"prev_page\": \"http://127.0.0.1/news/1\",\n\t\"total\": 37,\n\t\"items\": [{{#repeat 10}}\n\t\t{\n\t\t\t\"id\": {{@index}},\n\t\t    \"title\": \"{{title}}\",\n\t\t    \"description\": \"{{lorem}}\",\n\t\t    \"published\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n\t\t    \"category\": \"{{title}}\"\n\t\t}\n\t\t{{/ repeat}}]\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "news/3",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n\t\"next_page\": \"http://127.0.0.1/news/4\",\n\t\"prev_page\": \"http://127.0.0.1/news/2\",\n\t\"total\": 37,\n\t\"items\": [{{#repeat 10}}\n\t\t{\n\t\t\t\"id\": {{@index}},\n\t\t    \"title\": \"{{title}}\",\n\t\t    \"description\": \"{{lorem}}\",\n\t\t    \"published\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n\t\t    \"category\": \"{{title}}\"\n\t\t}\n\t\t{{/ repeat}}]\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "news/4",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n\t\"prev_page\": \"http://127.0.0.1/news/3\",\n\t\"total\": 37,\n\t\"items\": [{{#repeat 7}}\n\t\t{\n\t\t\t\"id\": {{@index}},\n\t\t    \"title\": \"{{title}}\",\n\t\t    \"description\": \"{{lorem}}\",\n\t\t    \"published\": \"{{ date '2018' '2020' 'YYYY-MM-DD hh:mm:ss' }}\",\n\t\t    \"category\": \"{{title}}\"\n\t\t}\n\t\t{{/ repeat}}]\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Origin",
+                        "value": "*"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Methods",
+                        "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Headers",
+                        "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+                    }
+                ]
+            }
+        }
+    ]
+}

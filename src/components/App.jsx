@@ -5,7 +5,6 @@ import {
     Route,
 //    Link,
 } from 'react-router-dom';
-import Store from 'components/Store';
 import {
     Account,
     Main,
