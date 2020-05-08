@@ -1,8 +1,10 @@
-import Account from './Account.jsx';
-import Main from './Main.jsx';
+import Account from './Account';
+import Main from './Main';
+import News from './News';
 
 
 export {
 	Account,
 	Main,
+	News
 };

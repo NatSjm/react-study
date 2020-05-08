@@ -9,10 +9,12 @@ const Wrapper = styled(Button)`
 	transition: all .1s linear;
 	padding: 10px 0;
 	border-radius: 15px;
+	margin-top: 20px;
+	
 
 	${({ tablet, mobile, theme }) => {
 		const type = tablet
-			? 'primaryMobile' 
+			? 'primaryTablet' 
 			: mobile
 				? 'primaryMobile'
 				: 'primaryDesktop'
@@ -48,11 +50,11 @@ class Save extends React.PureComponent {
 		children: 'Сохранить',
 	};
 
-	componentDidMount = () => {
-		window.addEventListener('onChangeResolution', (e) => {
-			this.forceUpdate();
-		});
-	};
+	// componentDidMount = () => {
+	// 	window.addEventListener('onChangeResolution', (e) => {
+	// 		this.forceUpdate();
+	// 	});
+	// };
 
 	render = () => {
 		const { mobile, tablet } = this.props;
