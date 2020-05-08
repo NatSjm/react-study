@@ -28,8 +28,6 @@ class App extends React.Component {
 
             <BrowserRouter>
                 <Header/>
-                    <Navigation/>
-
                 <Switch>
                     <Route exact path="/">
                         <Main/>
