@@ -1,15 +1,10 @@
-export const get = () => (dispatch) => {
-//const response = fetch('http://0.0.0.0:3006/news');
-const response = fetch('http://localhost:3006/news');
+import axios from 'axios';
 
-	response.then((data) => {
-		data.text().then((data) => {
-			data = JSON.parse(data);
-			console.log(data);
-			dispatch({
-				type: 'SET_NEWS',
-				payload: data,
-			});
-		});
-	});
+export const get = () => async (dispatch) => {
+    const {data} = await axios.get('http://127.0.0.1:3006/news');
+    dispatch({
+        type: "SET_NEWS",
+        payload: data,
+    });
 };
+

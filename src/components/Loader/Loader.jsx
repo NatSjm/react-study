@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 import React from 'react';
+
 const opacityChange = keyframes`
    0%, 100%{
     opacity: 0;
@@ -11,8 +12,7 @@ const opacityChange = keyframes`
 `;
 
 const Wrapper = styled.div`
- 
-display: block;
+ display: block;
 padding: 50px 0;
  & div{
       width: 100px;
@@ -23,8 +23,8 @@ padding: 50px 0;
       
       &   span{
            display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           border-radius: 100%;
           background-color: #373737;
           margin: 35px 5px;

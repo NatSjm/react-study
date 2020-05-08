@@ -17,20 +17,20 @@ class News extends React.Component {
     };
 
     render = () => {
-        const {data} = this.props;
+        const { data } = this.props;
         return <Block>
             <PageTitle>Новости</PageTitle>
-            {(data && data.length)
+            { (data && data.length)
                 ? (() => {
                     return data.map((item, i) => {
                         return <NewsItem
-                                key={ i }
-                                newsItem={ item }/>
-                            });
+                            key={ i }
+                            newsItem={ item }/>
+                    });
                 })()
                 : <Loader/>
             }
-                </Block>;
+        </Block>;
     };
 };
 
@@ -39,3 +39,21 @@ export default connect((store) => ({
 }), (dispatch) => ({
     news: bindActionCreators(news, dispatch),
 }))(News);
+
+
+// [
+//     {
+//         "id": 1,
+//         "title": "John",
+//         "description": "Snow",
+//         "published": "2019-12-02 17:58:59",
+//         "category": "horses"
+//     },
+//     {
+//         "id": 2,
+//         "title": "Daenerys",
+//         "description": "Targaryen",
+//         "published": "2020-04-02 17:58:59",
+//         "category": "birds"
+//     }
+// ]
