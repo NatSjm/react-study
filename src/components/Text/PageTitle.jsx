@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 const PageTitle = styled.h3`
-	color: rgb(23, 24, 32);
-	font-size: 30px;
-	margin-left: 5%;
-`;
+font-size: 30px;
+margin-left: 5%;
+${({theme}) => {
+    return `
+           color: ${theme.colors.major};
+           `;
+}
+    }
+`
 export default PageTitle;

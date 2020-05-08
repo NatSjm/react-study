@@ -15,7 +15,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {resolution} from 'components/Store/actions';
 import Header from 'components/Header';
-import Navigation from 'components/Navigation';
+
 
 class App extends React.Component {
     componentDidMount = () => {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Primary} from 'components/Block';
 import imagesList from 'img/news_images';
 import Block from 'components/Block';
-import {Flex} from 'components/Block';
+import NewsItemHeader from './NewsItemHeader';
 
 
 const Wrapper = styled(Primary)`
@@ -31,12 +31,6 @@ const Wrapper = styled(Primary)`
 	  top: 20px;
 	}
 	
-	& span{
-	color: #B7B8B7;
-	margin-right: 20px;
-	font-size: 12px;
-	text-transform: upperCase;	
-	}
 	& h3{
 	color: rgba(23, 24, 32);
 	font-size: 20px;
@@ -56,14 +50,14 @@ class NewsItem extends React.Component {
         } = this.props.newsItem;
 
         return <Wrapper id={id}>
-            <Flex>
+            <NewsItemHeader>
                 <span>
                     {new Date(published).toLocaleString()}
                 </span>
                 <span>
                     {category}
                 </span>
-            </Flex>
+            </NewsItemHeader>
             <h3>
                 {title}
             </h3>
