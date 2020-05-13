@@ -10,7 +10,6 @@ import {
     Main,
     News
 } from 'routes';
-
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {resolution} from 'components/Store/actions';

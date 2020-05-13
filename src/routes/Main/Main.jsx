@@ -7,6 +7,7 @@ class Main extends React.Component {
 
     render = () => {
 
+    	console.log('weoojgfiwejigj')
         return <div>
             <PageTitle>Main</PageTitle>
               </div>;
