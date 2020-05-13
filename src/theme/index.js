@@ -4,6 +4,7 @@ import * as inputs from './inputs';
 import * as avatar from './avatar';
 import * as form from './form';
 import * as blocks from './blocks';
+import * as news from './news';
 
 export {
     colors,
@@ -11,5 +12,6 @@ export {
     inputs,
     avatar,
     form,
-    blocks
+    blocks,
+    news
 };
