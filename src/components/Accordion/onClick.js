@@ -1,6 +1,6 @@
 
 let timeout;
-const onClick = (index, action) => (e) => {
+const onClick = (e, index, action) => {
 	e.preventDefault();
 
 	clearTimeout(timeout);
