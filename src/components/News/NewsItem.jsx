@@ -16,6 +16,7 @@ const Wrapper = styled(Primary)`
 	align-items: flex-start;
 	justify-content: flex-start;
 	position: relative;
+	flex-wrap: nowrap;
 	&:before{	
 	  content: '';  	
 	  background-color: grey;
@@ -30,7 +31,7 @@ const Wrapper = styled(Primary)`
 	& h3{
 	color: rgba(23, 24, 32);
 	font-size: 20px;
-	margin: 16px 0 ;
+	margin: 10px 0 ;
 	}
 	
     ${({tablet, mobile, theme}) => {
