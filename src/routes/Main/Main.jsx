@@ -1,16 +1,17 @@
 import React from 'react';
 import {PageTitle} from 'components/Text';
-
-
+import Accordion from 'components/Accordion';
+import Preview from 'components/Preview';
 
 class Main extends React.Component {
 
     render = () => {
-
-    	console.log('weoojgfiwejigj')
-        return <div>
+		return <div>
             <PageTitle>Main</PageTitle>
-              </div>;
+            <Accordion>
+            	<Preview />
+            </Accordion>
+        </div>;
     };
 };
 

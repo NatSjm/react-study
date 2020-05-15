@@ -1,7 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 import {Flex} from 'components/Block';
+import { Index as IndexContext } from './Contexts.js';
+import onClickFunc from './onClick.js';
 
-const AccordionItem = styled(Flex)`
+const Wrapper = styled(Flex)`
     flex-direction: column;
     border-radius: 4px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);  
@@ -18,5 +21,15 @@ const AccordionItem = styled(Flex)`
 	  color: darkblue;
 	}
 `;
+
+const AccordionItem = ({ action, ...props }) => {
+	const index = React.useContext(IndexContext);
+	const onClick = React.useCallback((e) => onClickFunc(e, index, action), [
+		index,
+		action,
+	]);
+
+	return <Wrapper { ...props } onClick={onClick} />;
+};
 
 export default AccordionItem;

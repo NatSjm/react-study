@@ -13,3 +13,16 @@ ReactDOM.render(
 	</StoreProvider>, 
 	document.getElementById('root')
 );
+
+const func = (test = '---') => {
+	console.log('?????????????????' + test);
+};
+
+const funcHoc = (callback = () => {}) => {
+	return () => {
+		callback('lqjwfoqwj');
+		console.log('######################3');
+	};
+};
+
+
