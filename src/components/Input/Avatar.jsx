@@ -15,7 +15,7 @@ const Wrapper = styled(Block)`
 	background: #fff;
 	& input {
 	
-	${({ theme })=> `
+	${({theme}) => `
 		display: ${theme.avatar.avatarPrimary.display};
 		width: ${theme.avatar.avatarPrimary.width};
 		height: ${theme.avatar.avatarPrimary.height};
@@ -49,9 +49,7 @@ class Avatar extends React.Component {
 		reader.readAsDataURL(e.currentTarget.files[0]);
 		reader.onload = () => {
 			let newFile = reader.result;
-
-
-			this.setState({ src: newFile });
+			this.setState({src: newFile});
 		};
 	};
 

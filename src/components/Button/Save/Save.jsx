@@ -17,7 +17,7 @@ const Wrapper = styled(Button)`
 			? 'primaryTablet' 
 			: mobile
 				? 'primaryMobile'
-				: 'primaryDesktop'
+				: 'primaryDesktop';
 
 		return `
 			width: ${theme.buttons[type].width};
